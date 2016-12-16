@@ -11,7 +11,10 @@
 // dotnet_Passive enabled shows the .NET/VC2010 installation progress, as it can take quite some time
 #define dotnet_Passive
 #define use_dotnetfx40
-#define use_vc2010
+
+// This fork is built with vc2015, but the installed isn't updated to install the redistributable
+// so we just assume it's already there.
+// #define use_vc2010 
 
 // Enable the required define(s) below if a local event function (prepended with Local) is used
 //#define haveLocalPrepareToInstall
@@ -48,7 +51,7 @@ AlwaysShowGroupOnReadyPage=yes
 DisableProgramGroupPage=auto
 AlwaysRestart=yes
 
-ArchitecturesInstallIn64BitMode=x64 ia64
+ArchitecturesInstallIn64BitMode=x64
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
@@ -91,9 +94,10 @@ Filename: "{app}\pGina.InstallUtil.exe"; Parameters: "post-uninstall"; StatusMsg
 #include "scripts\products\dotnetfx40client.iss"
 #include "scripts\products\dotnetfx40full.iss"
 #endif
-#ifdef use_vc2010
-#include "scripts\products\vc2010.iss"
-#endif
+
+// #ifdef use_vc2010
+// #include "scripts\products\vc2010.iss"
+// #endif
 
 #include "scripts\services.iss"
 
@@ -138,10 +142,10 @@ begin
   dotnetfx40full(false);
 #endif
 
-  // Visual C++ 2010 Redistributable
-#ifdef use_vc2010
-  vc2010();
-#endif
+// Visual C++ Redistributable
+//#ifdef use_vc2010
+//   vcredist2010();
+// #endif
 	
   Result := true;
 end;
