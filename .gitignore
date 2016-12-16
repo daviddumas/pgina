@@ -6,6 +6,7 @@
 *.sdf
 *.opensdf
 *.db
+*.opendb
 *.filter
 
 # Log files
