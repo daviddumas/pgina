@@ -5,6 +5,8 @@
 *.ipch
 *.sdf
 *.opensdf
+*.db
+*.filter
 
 # Log files
 *_log.txt
@@ -13,6 +15,8 @@
 obj/
 bin/
 build/
+Debug/
+Release/
 
 # Installer output
 Installer/Output
