@@ -73,7 +73,7 @@ namespace pGina.Plugin.SSHAuth
             StringBuilder errsb = new StringBuilder(1024);  // For return error message from native auth function
             int rc;
 
-            rc = ssh_connect_and_pw_auth(Settings.Store.Host, Settings.Store.Port, userInfo.Username, userInfo.Password, errsb, errsb.Capacity);
+            rc = ssh_connect_and_pw_auth(sshHost, sshPort, userInfo.Username, userInfo.Password, errsb, errsb.Capacity);
             if (rc == 0)
             {
                 // Successful authentication
