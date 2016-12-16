@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+	zenlike1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+
+-->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>pGina fork</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" type="text/css" href="http://mutonufoai.github.io/pgina/default_doc.css" />
+
+</head>
+<body>
+
+<div id="outer">
+
+	<div id="header">
+		<div id="headercontent">
+			<h1>pGina fork</h1>
+			<h2>Open Source Windows Authentication</h2>
+		</div>
+		<div id="logo"><a href="http://mutonufoai.github.io/pgina/index.html"><img src="http://mutonufoai.github.io/pgina/images/pginalogo.png" /></a></div>
+	</div>
+
+	
+	<div id="menu">
+		<!-- HINT: Set the class of any menu link below to "active" to make it appear active -->
+		<ul>
+			<li><a href="http://mutonufoai.github.io/pgina/index.html">Home</a></li>
+			<li><a href="http://mutonufoai.github.io/pgina/download.html">Download</a></li>
+      <li><a href="http://mutonufoai.github.io/pgina/support.html">Support</a></li>
+      <li><a href="http://mutonufoai.github.io/pgina/documentation.html" class="active">Documentation</a></li>
+      <li><a href="http://mutonufoai.github.io/pgina/develop.html">Develop</a></li>
+      <li><a href="http://mutonufoai.github.io/pgina/faq.html">FAQ</a></li>
+      <li><a href="http://mutonufoai.github.io/pgina/thanks.html">Thanks</a></li>
+		</ul>
+	</div>
+
+	<div id="menubottom"></div>
+
+	<div id="content">
+	    
+<h1 id="ldap_plugin_documentation">SSHAuth Plugin  Documentation</h1>
+
+<ul>
+<li><strong>Plugin Name:</strong> SSHAuth</li>
+
+<li><strong>Plugin Type:</strong> Authentication</li>
+
+<li><strong>Version:</strong> 3.9.9</li>
+</ul>
+
+<h2 id="how_the_sshauth_plugin_works">How the SSHAuth Plugin Works</h2>
+
+<p>The SSHAuth plugin provides pGina services using an SSH server as a data source.  The plugin connects to the SSH server and attempts to authenticate as the given user with the &quot;password&quot; authentication method.  It is not necessary for the user to be able to open an actual shell or execute commands on the SSH server, but note that SSH authentication stage will return failure if the user shell is set to "/sbin/nologin".</p>
+
+<h2 id="known_issues">Known issues</h3>
+
+<ul>
+  <li>Many SSH servers do not support the &quot;password&quot; authentication method and instead use &quot;keyboard-interactive&quot; to ask for the user's password.  However, this plugin does not support &quot;keyboard-interactive&quot; authentication.
+  <li>The plugin uses the first address returned by <i>getaddrinfo</i>.  Therefore, if a name resolution attempt for the given SSH hostname returns multiple addresses (e.g. IPV4 and IPV6), the plugin will only function as intended if a connect attempt usign the first address returned is successful.
+  <li>Password change is not supported and would be complicated/fragile to implement by this method.
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The configuration options for the SSHAuth plugin are described below:</p>
+
+<ul>
+  <li><strong>Host</strong> – SSH server.  This field supports IP addresses or fully qualified domain names.</li>
+  <li><strong>Port</strong> – The port used when connecting to the SSH server. Typically, this is 22.  This string is passed directly to <i>getaddrinfo</i>, hence service names known to windows are also accepted (e.g. &quot;ssh&quot;).
+</ul>
+</h2>
+
+<h2 id="see_also">Author</h2>
+
+<p>This SSHAuth plugin for pGina 3.x was developed by <a href="http://dumas.io/">David Dumas</a> <a href="mailto:david@dumas.io">&lt;david@dumas.io&gt;</a>.</p>
+												  
+<p>This plugin was inspired by a <a href="sshauth.sourceforge.net">pGina 1.x and 2.x plugin also named SSHAuth developed by Ahmed Obied</a>.  However, due to the significant plugin interface changes for pGina 3.x, this plugin was developed from scratch rather than being derived from that codebase.</p>
+
+</h2>
+
+
+
+  </div>
+
+	<div id="footer">
+			<div class="left">SSHAuth plugin &copy; 2016 David Dumas &nbsp; | &nbsp; pGina &copy; 2016 pGina Team</div>
+			<div class="right">Original design by 
+			<a href="http://www.nodethirtythree.com/">NodeThirtyThree Design</a></div>
+	</div>
+	
+</div>
+
+</body>
+</html>
+
