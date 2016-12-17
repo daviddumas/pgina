@@ -27,6 +27,11 @@ Building this DLL requires static libraries for *libssh2* and its
 dependencies *OpenSSL* and *Zlib*.  Such static libraries are included
 in this repository, but alternatively they can be built from source
 and moved to the corresponding folders specified in the library
-#pragma directives of SSHAuthNative.cs before attempting to build this
+pragma directives of SSHAuthNative.cs before attempting to build this
 plugin.
 
+## Author
+
+This SSHAuth plugin for pGina 3.x was developed by David Dumas.
+
+This plugin was inspired by a [pGina 1.x and 2.x plugin also named SSHAuth developed by Ahmed Obied](http://sshauth.sourceforge.net/).  However, due to the significant plugin interface changes for pGina 3.x, this plugin was developed from scratch rather than being derived from that codebase.
